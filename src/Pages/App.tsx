@@ -66,7 +66,7 @@ function App() {
         </header>
 
         {/* Primary data section */}
-        <div className="px-1 grid grid-cols-2 place-item-center w-full  mb-4 lg:flex justify-between items-center">
+        <div className="px-1 grid grid-cols-2 place-item-center w-full mb-4 lg:flex justify-between items-center">
           {dataPrimaryFake.map((data, index) => (
             <PrimaryCard key={index} data={data} />
           ))}
