@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400;500;600;700&display=swap");
+
+@import "./vars.css";
+
+@tailwind base;
+@layer base {
+  body {
+    font-family: "Baloo Bhai 2", sans-serif;
+  }
+}
+@tailwind components;
+@layer components {
+  .drawer-li {
+    @apply rounded-md text-primary flex gap-3 items-center p-2 hover:text-black hover:bg-primary transition-all  font-semibold;
+  }
+}
+@tailwind utilities;
