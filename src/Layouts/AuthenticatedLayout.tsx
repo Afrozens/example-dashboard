@@ -37,7 +37,7 @@ const AuthenticatedLayout = ({ children }: Props) => {
       </aside>
 
       {/* Section of data */}
-      <article className="w-9/12 h-screen bg-primary">
+      <article className="w-full ml-[25%] md:w-9/12 h-screen bg-primary text-black px-3 py-5">
         <header className="h-16 w-full md:hidden">
           <button
             type="button"

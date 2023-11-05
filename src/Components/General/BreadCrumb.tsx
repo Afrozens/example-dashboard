@@ -6,10 +6,12 @@ interface Props {
 
 const BreadCrumb = ({ children }: Props) => {
   return (
-    <div className="font-bold text-lg">
-      {children}
-      Inicio
-    </div>
+    <ul className="font-bold text-lg mb-4">
+      <li className="flex items-center gap-3">
+        {children}
+        Inicio
+      </li>
+    </ul>
   );
 };
 
