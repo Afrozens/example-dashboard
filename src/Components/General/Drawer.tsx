@@ -69,8 +69,8 @@ const Drawer = () => {
         <BiSolidHome className="w-8 h-6" />
         Inicio
       </li>
-      {drawerOptionsFake.map((option) => (
-        <li>
+      {drawerOptionsFake.map((option, index) => (
+        <li key={index}>
           <a
             className={`${
               option.isDropdown ? "justify-between" : " justify-start"

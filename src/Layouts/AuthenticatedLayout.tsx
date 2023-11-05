@@ -11,7 +11,7 @@ const AuthenticatedLayout = ({ children }: Props) => {
   const [isOpenDrawer, setIsOpenDrawer] = useState(false);
 
   return (
-    <section className="flex w-full min-h-screen">
+    <section className="flex w-full">
       {/* Drawer or Aside */}
       {isOpenDrawer && (
         <div
@@ -22,13 +22,15 @@ const AuthenticatedLayout = ({ children }: Props) => {
       <aside
         className={`${
           isOpenDrawer ? "flex w-2/4" : "hidden w-0"
-        }  md:w-3/12 min-h-screen absolute transition-all bg-secondary md:flex flex-col justify-between items-center py-6 md:gap-3 z-50`}
+        }  md:w-3/12 min-h-screen fixed transition-all bg-secondary md:flex flex-col justify-between items-center py-6 md:gap-3 z-50`}
       >
         {/* Logotype in Aside */}
-        <h1 className="text-primary font-semibold text-2xl">
-          <b className="text-tertiary">Smart</b>water
-        </h1>
-        <Drawer />
+        <div className="w-full flex flex-col justify-center items-center">
+          <h1 className="text-primary mb-7 font-semibold text-2xl">
+            <b className="text-tertiary">Smart</b>water
+          </h1>
+          <Drawer />
+        </div>
         {/* Logout in Aside */}
         <button className="rounded-3xl bg-primary text-black justify-between flex items-center text-sm font-semibold px-[20px] py-[10px] mx-auto mb-12 md:mb-0 w-3/5 hover:opacity-80 hover:scale-95 transition-all">
           <FiLogOut className="w-8 h-8" />
@@ -37,7 +39,7 @@ const AuthenticatedLayout = ({ children }: Props) => {
       </aside>
 
       {/* Section of data */}
-      <article className="w-full ml-[25%] md:w-9/12 h-screen bg-primary text-black px-3 py-5">
+      <article className="w-full md:ml-[25%] md:w-9/12  bg-primary text-black px-3 py-5">
         <header className="h-16 w-full md:hidden">
           <button
             type="button"

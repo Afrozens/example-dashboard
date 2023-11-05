@@ -9,6 +9,7 @@ import ContainerPrimary from "../Components/Containers/ContainerPrimary";
 import Dropdown from "../Components/PrimitiveElements/Dropdown";
 import InputNumber from "../Components/PrimitiveElements/InputNumber";
 import InputPrice from "../Components/PrimitiveElements/InputPrice";
+import VerticalBar from "../Components/Charts/VerticalBar";
 
 function App() {
   const dataPrimaryFake: DataPrimary[] = [
@@ -52,6 +53,7 @@ function App() {
   return (
     <AuthenticatedLayout>
       <div className="w-full flex flex-col min-h-screen ">
+        {/* Header with breadcrumb and notifications */}
         <header className=" mb-4 flex justify-between items-center">
           <BreadCrumb>
             {/* Pasaría un listado de url con la finalidad de hacerlo dinamico */}
@@ -62,20 +64,24 @@ function App() {
             <IoMdNotifications className="w-8 h-8 text-white" />
           </button>
         </header>
-        <div className="px-1 w-full gap-4 mb-4 flex justify-between items-center">
-          {dataPrimaryFake.map((data) => (
-            <PrimaryCard data={data} />
+
+        {/* Primary data section */}
+        <div className="px-1 grid grid-cols-2 place-item-center w-full  mb-4 lg:flex justify-between items-center">
+          {dataPrimaryFake.map((data, index) => (
+            <PrimaryCard key={index} data={data} />
           ))}
         </div>
+
+        {/* Secondary data section */}
         <div className="px-1 w-full flex gap-5 flex-col ">
           <h3 className=" font-semibold text-xl text-black">
             Acciones rápidas
           </h3>
-          <div className="w-full flex gap-5 items-center">
+          <div className="w-full flex flex-col lg:flex-row gap-5 items-center">
             <SecondaryCard title="Clientes">
               <div className="w-full flex flex-col gap-4">
-                {namesFake.map(({ name }) => (
-                  <ContainerPrimary name={name} />
+                {namesFake.map(({ name }, index) => (
+                  <ContainerPrimary key={index} name={name} />
                 ))}
               </div>
             </SecondaryCard>
@@ -93,6 +99,11 @@ function App() {
               </div>
             </SecondaryCard>
           </div>
+        </div>
+
+        {/* Tertiary data section */}
+        <div className=" h-96 py-4 px-14 my-7 border  rounded-xl">
+          <VerticalBar />
         </div>
       </div>
     </AuthenticatedLayout>
